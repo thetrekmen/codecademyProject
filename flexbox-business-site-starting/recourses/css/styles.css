@@ -1,0 +1,482 @@
+/* universals start */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
+
+*{
+    padding: 0; margin: 0;
+    border: none; outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --light-grey:rgb(120, 121, 125);
+    --dark-grey:rgb(45,45,45);
+    --dark-grey-transparent:rgba(45,45,45,0.7);
+    --dark-grey-nav-transparent:rgba(0,0,0,.5);
+    --purple:rgb(92, 102, 168);
+    --accent:#009FC5;
+    --black:rgba(0, 0, 0, 0.788);
+    --white:rgb(236, 235, 235);
+    --white-transparent:rgba(236, 235, 235,0.7);
+}
+
+html{
+    scroll-behavior: smooth;
+    background-color:var(--light-grey);
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+a{
+    color: inherit;
+}
+
+/* universals end */
+
+
+/* navigation bar start */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 2rem;
+    background: transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+.nav-scrolled{
+    background: var(--dark-grey-nav-transparent);
+}
+
+#nav-icon2{
+    display: none;
+    position: absolute;
+}
+
+.nav .logo__wrapper{
+    width: 6rem;
+    height: auto;
+}
+
+.nav .logo__wrapper a{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.nav .logo__wrapper[data-visible="false"]{
+    display: none;
+}
+
+/* svg is using a filter which i converted from hex.  found here https://codepen.io/sosuke/pen/Pjoqqp */
+.nav .logo__wrapper img{
+    width: 30%;
+    height: auto;
+    filter: invert(97%) sepia(30%) saturate(4178%) hue-rotate(162deg) brightness(84%) contrast(88%);
+}
+
+.nav .logo__wrapper p{
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.drop-down__container__flex{
+    list-style: none;
+    display: flex;
+}
+
+.drop-down__container__flex li{
+    padding: 0 2rem 0 2rem;
+    color: var(--white);
+}
+
+.drop-down__container__flex li:hover{
+    text-decoration: underline;
+}
+
+.connect_wallet_button{
+    background-color:var(--accent);
+    color:var(--white);
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    width: auto;
+}
+
+.connect_wallet__wrapper img{
+    width: auto;
+    height: 100%;
+    padding-left: .5rem;
+    filter: invert(100%) sepia(0%) saturate(3178%) hue-rotate(126deg) brightness(114%) contrast(85%);
+}
+
+.connect_wallet_button:hover{
+    box-shadow: 0 0 9px var(--purple);
+}
+
+.connect_wallet_button:active{
+    background-color: var(--purple);
+}
+
+
+@media only screen and (max-width: 900px) {
+
+    .nav{
+        padding: 1rem 2rem;
+    }
+
+    /* hamburger start */
+
+    #nav-icon2{
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        top: .6rem;
+        left: 2rem;
+        width: 60px;
+        height: 45px;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+
+    /* Animated */
+
+    #nav-icon2 span {
+        display: block;
+        position: absolute;
+        height: 9px;
+        width: 50%;
+        opacity: 1;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+    }
+
+    #nav-icon2 span:nth-child(even) {
+        left: 50%;
+        border-radius: 0 9px 9px 0;
+    }
+
+    #nav-icon2 span:nth-child(odd) {
+        left:0px;
+        border-radius: 9px 0 0 9px;
+    }
+
+    #nav-icon2 span:nth-child(1), #nav-icon2 span:nth-child(2) {
+        top: 0px;
+        background: var(--white);
+    }
+
+    #nav-icon2 span:nth-child(3), #nav-icon2 span:nth-child(4) {
+        top: 18px;
+        background: var(--accent);
+    }
+
+    #nav-icon2 span:nth-child(5), #nav-icon2 span:nth-child(6) {
+        top: 36px;
+        background: var(--white);
+    }
+
+    #nav-icon2 span:nth-child(7), #nav-icon2 span:nth-child(8) {
+      top: 18px;
+      background: var(--white);
+  }
+
+    #nav-icon2.open span:nth-child(1),#nav-icon2.open span:nth-child(6) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        background: var(--white);
+    }
+  
+    #nav-icon2.open span:nth-child(2),#nav-icon2.open span:nth-child(5) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        background: var(--white);
+    }
+
+    #nav-icon2.open span:nth-child(1) {
+        left: 5px;
+        top: 7px;
+    }
+
+    #nav-icon2.open span:nth-child(2) {
+        left: calc(50% - 5px);
+        top: 7px;
+    }
+
+    #nav-icon2.open span:nth-child(3) {
+        left: -50%;
+        opacity: 0;
+    }
+
+    #nav-icon2.open span:nth-child(4) {
+        left: 100%;
+        opacity: 0;
+    }
+
+    #nav-icon2.open span:nth-child(5) {
+        left: 5px;
+        top: 29px;
+    }
+
+    #nav-icon2.open span:nth-child(6) {
+        left: calc(50% - 5px);
+        top: 29px;
+    }
+    #nav-icon2.open span:nth-child(7) {
+      left: -50%;
+      opacity: 0;
+      -webkit-transition: .05s ease-in-out;
+      -moz-transition: .05s ease-in-out;
+      -o-transition: .05s ease-in-out;
+      transition: .05s ease-in-out;
+  }
+
+  #nav-icon2.open span:nth-child(8) {
+      left: 100%;
+      opacity: 0;
+      -webkit-transition: .05s ease-in-out;
+      -moz-transition: .05s ease-in-out;
+      -o-transition: .05s ease-in-out;
+      transition: .05s ease-in-out;
+  }
+  
+    /* hamburger end */
+
+
+    .nav .logo__wrapper{
+        position:fixed;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .drop-down__container__flex{
+        position: fixed;
+        flex-direction: column;
+        background: var(--dark-grey-nav-transparent);
+        top: 4rem;
+        left: 0;
+        padding: 2rem;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: transform 350ms ease-in-out;
+        z-index: 900;
+    }
+
+    .drop-down__container__flex[data-visible="true"]{
+        transform: translateX(0%);
+    }
+
+    .nav .drop-down__container__flex li{
+        padding: 3rem 2rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .nav .logo__wrapper{
+        display:none
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .nav .logo__wrapper{
+        display:none
+    }
+}
+
+/* navigation bar end */
+
+
+/* hero content start */
+#hero__wrapper{
+    /* background-image: url("../img/shubham-dhage-UxDU0Gg5pqQ-unsplash.jpeg"); */
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 5%,
+              rgba(255,255,255,0) 95%, rgb(120, 121, 125)), url("../img/shubham-dhage-UxDU0Gg5pqQ-unsplash.jpeg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50rem;
+    display: flex;
+    align-items: center;
+}
+
+.hero_content{
+    display: flex;
+    flex-direction: column;
+    padding-left:2rem;
+    width: 100%;
+}
+
+.hero_content .hero_etm{
+    font-size:7rem;
+    font-weight: 700;
+    color: var(--white-transparent);
+}
+
+.hero_content .hero_button__wrapper{
+    background-color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .1rem;
+    color: var(--white);
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    width: 12rem;
+}
+
+.hero_content .hero_button__wrapper:hover{
+box-shadow: 0 0 9px var(--purple);
+}
+
+.hero_content .hero_button__wrapper:active{
+    background-color: var(--purple);
+    }
+
+.hero_content .hero_button p{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 1070px){
+    .hero_content .hero_etm{
+        font-size:5.5rem;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .hero_content .hero_etm{
+        font-size:5rem;
+    }
+}
+
+@media only screen and (max-width: 780px){
+    .hero_content .hero_etm{
+        font-size:4.5rem;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .hero_content .hero_etm{
+        font-size:4rem;
+    }
+}
+
+@media only screen and (max-width: 630px){
+    .hero_content .hero_etm{
+        font-size:3.5rem;
+    }
+}
+
+@media only screen and (max-width: 560px){
+    .hero_content .hero_etm{
+        font-size:3rem;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .hero_content .hero_etm{
+        font-size:2.5rem;
+    }
+
+    .hero_content .hero_button p{
+        font-size: 2rem;
+    }
+
+@media only screen and (max-width: 560px){
+    .hero_content .hero_etm{
+        font-size:3rem;
+    }
+}
+
+@media only screen and (max-width: 479px){
+    .hero_content{
+    text-align: center;
+    align-items: center;
+    padding-left:1rem;
+    padding-right: 1rem;
+    }
+}
+/* hero content end */}
+
+.content-card__wrapper{
+    max-width: 1000px;
+    max-height: auto;
+    background-color: var(--accent);
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    outline: solid red;
+}
+
+.content-text{
+    max-width: 500px;
+    width: 500px;
+    margin: auto;
+    padding: 1rem 2rem;
+}
+
+.content-text h1{
+    color: var(--white);
+}
+
+.content-text p{
+    color: var(--white);
+    padding: 1rem 0;
+}
+
+.content-img{
+    /* background: url("/recourses/img/shubham-dhage-R2HtYWs5-QA-unsplash.jpeg"); */
+    /* background: linear-gradient(90deg, rgba(0,0,0,1) 40%,
+    rgba(255,255,255,1) 60%, var(--purple)) url("/recourses/img/shubham-dhage-R2HtYWs5-QA-unsplash.jpeg"); */
+    background: linear-gradient(to left, rgba(0,0,0,0) 70%, var(--accent)), url("../img/shubham-dhage-R2HtYWs5-QA-unsplash.jpeg");
+    max-width: 500px;
+    width: 500px;
+    height: auto;
+    background-position: center;
+    background-size: cover;
+}
+
+.text-filler p{
+    margin:3rem 3rem;
+}
+
+footer{
+    background: var(--accent);
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    padding: 2rem 1rem
+}

@@ -1,0 +1,224 @@
+:root{
+    --font-size-300: .8rem;
+    --font-size-400: 1.25rem;
+    --font-size-500: 1.75rem;
+    --font-size-600: 2.25rem;
+    --font-size-700: 3rem;
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+html{
+    background:black;
+    color: seashell;
+    opacity: .9;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+}
+
+/* 
+/////////////////
+Header
+\\\\\\\\\\\\\\\\\
+ */
+
+header{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    border-bottom: 1px solid seashell;
+    background: black;
+}
+nav{
+    width: 100%;
+    /* height: 60px; */
+    display: flex;
+    justify-content: center;
+}
+
+.nav_wrapper__flex{
+    width: 95%;
+    height: auto;
+    justify-content: space-between;
+}
+
+ul{
+    list-style: none;
+    padding: 0%;
+    text-decoration: none;
+}
+
+li{
+    display: inline-block;
+    padding-left: 1rem;
+}
+
+.nav_ul ul li a{
+    color: inherit;
+}
+
+.nav_logo{
+    width: auto;
+    height: 3rem;
+    padding-top: .2rem;
+}
+
+/* 
+/////////////////
+Hero
+\\\\\\\\\\\\\\\\\
+ */
+
+.hero__container{
+    width: 1200px;
+    margin: auto;
+    height: 700px;
+    position: relative;
+    top: 3rem;
+    margin-bottom: 8rem;
+}
+
+.hero_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero_text_container{
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    height: auto;
+    background: black;
+    text-align: center;
+}
+
+/* 
+/////////////////
+Tea of the Month
+\\\\\\\\\\\\\\\\\
+ */
+
+.monthly_tea__container{
+    width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.monthly_tea_img__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.monthly_img{
+    width: 300px;
+    height: 200px;
+    margin: 0 .5rem;
+}
+
+/* 
+/////////////////
+Location
+\\\\\\\\\\\\\\\\\
+ */
+
+.location__container{
+    width: 1200px;
+    height: 500px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    top: 50px;
+
+}
+
+.location_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.location_title{
+    /* position: absolute; */
+    /* text-align: center; */
+    z-index: 2;
+    width: 100%;
+    height: 500px;
+    top: 40%;
+    position: absolute;
+}
+
+.location_title h2{
+    margin-bottom: 15px;
+}
+
+.location__wrapper{
+    width: 100%;
+}
+
+.location{
+    height: 300px;
+    width: 300px;
+    background: black;
+    opacity: 1;
+    display: inline-block;
+    line-height: 2.5rem;
+    margin: auto 40px;
+    text-align: center;
+}
+
+.location__p-1{
+    padding: 0px 60px;
+    margin: 0;
+    text-align: center;
+}
+
+.location__h3-1{
+    margin: 0;
+}
+
+
+.location__p-2{
+    padding: 0px 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.location__h3-2{
+    margin: 0;
+}
+
+.location__p-3{
+    padding: 0px 40px;
+    margin: 0;
+    text-align: center;
+}
+
+.location__h3-3{
+    margin: 0;
+}
+
+footer{
+    top: 340px;
+    text-align: center;
+    position: relative;
+}
+
+.foot-main{
+    height: 200px;
+}
+
+.foot-copy{
+    text-align: left;
+    margin-left: 20px;
+}
