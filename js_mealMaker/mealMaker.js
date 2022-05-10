@@ -57,6 +57,33 @@ Assuming you used the meal setter to assign a string, and the price setter to as
 If you want to extend your learning on this project, try adding an array of meals and prices to randomly set and get Today’s Special!
 */
 
+/*
+let menu = {
+  _meal: "",
+  _price: 0,
+  set meal(mealToCheck) {
+    if (typeof mealToCheck === "string") {
+      return (this._meal = mealToCheck);
+    }
+  },
+  set price(priceToCheck) {
+    if (typeof priceToCheck === "number") {
+      return (this._price = priceToCheck);
+    }
+  },
+  get todaysSpecial() {
+    if (this._meal && this._price) {
+      return `Today’s Special is ${this._meal} for $${this._price}!`;
+    } else {
+      return "Meal or price was not set correctly!";
+    }
+  },
+};
+
+menu.meal = "mashed potatoes";
+menu.price = 10;
+console.log(menu.todaysSpecial)
+*/
 
 let menu = {
   _meal: [
@@ -95,4 +122,4 @@ const mealPicker = Math.floor(Math.random() * menu._meal.length)
 // menu.price = 10;
 console.log(menu.todaysSpecial)
 
-console.log(mealPicker)
+
