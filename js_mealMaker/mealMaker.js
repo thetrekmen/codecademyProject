@@ -90,7 +90,7 @@ let menu = {
       "cheeseburger",
       "pizza",
       "ramen",
-      "hotdog"
+      "sandwich"
   ],
   _price: [
       3,
