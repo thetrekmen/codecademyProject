@@ -87,11 +87,81 @@ Use an iterator method of your choice to access the word (there is only one) in 
 Some ideas for replacement words that can be used are: stunning, dazzling, or glorious.
 */
 
-let story = 'Last weekend, I took literally the most beautifull bike ride of my life. The route is called "The 9W to Nyack" and it stretches all the way from Riverside Park in Manhattan to South Nyack, New Jersey. It\'s really an adventure from beginning to end! It is a 48 mile loop and it literally took me an entire day. I stopped at Riverbank State Park to take some artsy photos. It was a short stop, though, because I had a freaking long way to go. After a quick photo op at the very popular Little Red Lighthouse I began my trek across the George Washington Bridge into New Jersey. The GW is a breathtaking 4,760 feet long! I was already very tired by the time I got to the other side. An hour later, I reached Greenbrook Nature Sanctuary, an extremely beautifull park along the coast of the Hudson. Something that was very surprising to me was that near the end of the route you literally cross back into New York! At this point, you are very close to the end.';
+let story = 'Last weekend, I took literally the most beautifull bike ride of my life. The route is called "The 9W to Nyack" and it stretches all the way from Riverside Park in Manhattan to South Nyack, New Jersey. It\'s really an adventure from beginning to end! It is a 48 mile loop and it literally took me an entire day. I stopped at Riverbank State Park to take some artsy photos. It was a short stop, though, because I had a freaking long way to go. After a quick photo op at the very popular Little Red Lighthouse I began my trek across the George Washington Bridge into New Jersey. The GW is a breathtaking 4,760 feet long! I was already very tired by the time I got to the other side. An hour later, I reached Greenbrook Nature Sanctuary, an extremely beautifull park along the coast of the Hudson. Something that was very surprising to me was that near the end of the route you literally cross back into New York with all the vacationers walking! At this point, you are very close to the end.';
 
 let storyWords = story.split(' ');
 let unnecessaryWord = 'literally';
 let misspelledWord = 'beautifull';
 let badWord = 'freaking';
+let count = 0;
+// let words = word.length;
+// console.log(storyWords);
 
-console.log(storyWords);
+//filtering out the word "unnecessary" from the paragraph
+storyWords = storyWords.filter( (word) => {
+    return word != unnecessaryWord;
+});
+
+//spellchecker
+storyWords = storyWords.map( (word) => {
+    if (word === misspelledWord) {
+        return "beautiful";bad
+    } else {
+        return word;
+    }
+});
+
+//identifying a words index using a variable previously declared and replacing that word.
+const badWordIndex = storyWords.findIndex( (word) => {
+    if (word === badWord) {
+        return word;
+    }
+});
+storyWords[badWordIndex] = "really";
+
+//checks to see if every word is less than 10 characters long
+const lengthCheck = storyWords.every( (word) => {
+    word.length <= 10
+});
+
+console.log(lengthCheck);
+
+
+//identifying a words longer than 10 characters by index and replacing that word.
+// const longWord = storyWords.findIndex( (word) => {
+//     if (word.length >= 11) {
+//         return word;
+//     }
+// });
+// storyWords[longWord] = "stunning";
+
+let longWords = [];
+
+// storyWords.forEach( (word) => {
+//     for (let i = 0; i < storyWords.length; i++) {
+//         if (word.length > 11) {
+//         return longWords.push(word);
+//     }}
+// });
+
+storyWords.forEach( (word) => {
+    let i = 0; 
+    
+    do {
+        longWords.push(word);
+        i++;
+
+    }   while (word.length > 11);
+    })
+// longWords.push(word);
+
+//counting each word in the paragraph
+storyWords.forEach( (word) => {
+    count++;
+});
+
+console.log(count)
+console.log(storyWords.join(" "))
+// console.log(badWordIndex)
+console.log(longWords)
+// console.log(longWord)
