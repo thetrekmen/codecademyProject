@@ -182,7 +182,6 @@ let invalidCardCompanies = [];
         }
     } return invalidCardCompanies
 }
-//idInvalidCardCompanies(badBatch)
 console.log(idInvalidCardCompanies(badBatch))
 ////////////////idInvalidCardCompanies above////////////////
 
