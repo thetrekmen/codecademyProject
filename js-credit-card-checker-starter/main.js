@@ -22,9 +22,6 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3]
 // An array of all the arrays above
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5]
 
-//you'll need the .reduce method to add up all the elements in the array
-
-
 // Add your functions below:
 
 ////////////////validateCred below////////////////
@@ -68,8 +65,8 @@ const validateCred = (array) => {
 ////////////////validateCred above////////////////
 
 
-//let badBatch = []
-let badBatch = [[3, 4, 4, 8, 0, 1, 9, 6, 8, 3, 0, 5, 4, 1, 4], [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3], [7, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3]]
+let badBatch = []
+//let badBatch = [[3, 4, 4, 8, 0, 1, 9, 6, 8, 3, 0, 5, 4, 1, 4], [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3], [7, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3]]
 
 
 ////////////////findInvalidCards below////////////////
@@ -89,7 +86,7 @@ const findInvalidCards = (arr) => {
 };
 
 //console.log(findInvalidCards(batch))
-//findInvalidCards(batch)
+findInvalidCards(batch)
 //console.log(badBatch)
 ////////////////findInvalidCards above////////////////
 
@@ -184,6 +181,3 @@ let invalidCardCompanies = [];
 }
 console.log(idInvalidCardCompanies(badBatch))
 ////////////////idInvalidCardCompanies above////////////////
-
-
-//console.log(cards[0].visa[0])
