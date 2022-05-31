@@ -25,38 +25,46 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 // Add your functions below:
 
 ////////////////validateCred below////////////////
-
+//notes: created a function that accepts an array and will check it against the Luhn's algorithm
 const validateCred = (array) => {
-    let oddArray = [];
+// ive created variables that will store the odd and even indexs in the array.  the odd index numbers get doubled.  the initialValue is used for the .reduce method later on.  the counter variable is how im keeping track of the odds and even.  i know i didnt need this las variable... but i was having issues using the "i" varible in the loop to keep track of the index position.
+    let doubleArray = [];
     let newArray = [];
     let initialValue = 0;
     let count = 0;
-
+//this for loop starts at the last index position in the array and iterates backwards.
     for (i = array.length - 1; i >= 0; i--) {
         count++;
+// if its the first index postion or the last index postion in hte array thats the check digit.  we just push that into the newArray "even"
         if (0 === count) {
             newArray.push(array[i]);
         }
+// this will push every other number starting at the index after 0 to the double array and also double its value.
         else if (count % 2 == 0) {
-            oddArray.push(array[i] * 2);
-        } else {
+            doubleArray.push(array[i] * 2);
+        } 
+//all other indexs are pushed to the newArray with no changes.
+        else {
             newArray.push(array[i]);
         }
     }
 
-    for (j = 0; j < oddArray.length; j++) {
-        if (oddArray[j] > 9) {
-            newArray.push(oddArray[j] - 9);
+//this is where i could have just nest another if statment below the if statements above but it was late when i was wrting this and i wasnt thinking very straight :)  anyways this will check if any of the numbers in the double array have a value more than 9.  if they do 9  is subtracted from them and they are then sent to the newArray.  if their value is also already below 9 they are just sent to the new array no change.
+    for (j = 0; j < doubleArray.length; j++) {
+        if (doubleArray[j] > 9) {
+            newArray.push(doubleArray[j] - 9);
         } else {
-            newArray.push(oddArray[j]);
+            newArray.push(doubleArray[j]);
         }
     }
 
+//here i use the .reduce method to add up the sum of all the values in the newArray.
     const sumWithInitial = newArray.reduce(
         (previousValue, currentValue) => previousValue + currentValue,
         initialValue
     ); 
-    
+
+// the result of the sumWithInitial with sum modulo 10 requiring 0 remainder.  if true card is good.  if false card is bad.
     return sumWithInitial % 10 == 0;
 };
 
@@ -66,17 +74,15 @@ const validateCred = (array) => {
 
 
 let badBatch = []
-//let badBatch = [[3, 4, 4, 8, 0, 1, 9, 6, 8, 3, 0, 5, 4, 1, 4], [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3], [7, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3]]
-
 
 ////////////////findInvalidCards below////////////////
-
+//notes: this function will find cards that do not pass the luhns algorithm within a batch of cards.
 const findInvalidCards = (arr) => {
 
     //let badBatch = [];
 
     for (k = 0; k < arr.length; k++) {
-
+//this function is using a global function to check if the cards are good by iterating through each card via index postion [k].  if its false it will be pushed to the badBatch array.  ive created the array in the function aswell as making it a global array.
          if (validateCred(arr[k]) === false) {
             badBatch.push(arr[k])
         }
@@ -91,11 +97,11 @@ findInvalidCards(batch)
 ////////////////findInvalidCards above////////////////
 
 ////////////////idInvalidCardCompanies below////////////////
-
+//notes: this funtion will check for which card companies have shipped invalid credit card numbers.  it will return the name of the companies but the kicker is the company's name cannot repeat even if it has multiple cards that are bad.  i will admit i stumbled my way through this...
 const idInvalidCardCompanies = (arr) => {
 
 let invalidCardCompanies = [];
-
+//i created a for loop that will iterate through each index postion.  i also have the if statements looking at the first number of each cards [0] and checking it against the cc companies respective card numbers.  if it matches we'll push that company's name to the invalidCardCompany array.  also notice the break at the end of the last else if for "Discovery"  that stops the loop from repeating :)
     for (n = 0; n < arr.length; n++) {
         if (arr[n][0] === 3) {
             invalidCardCompanies.push("Amex");
@@ -114,7 +120,7 @@ let invalidCardCompanies = [];
             break
          } 
     }
-
+// here is where i just couldnt figure out how to add this block of code inside of the for loop above so i just broke it into its own loop....  not good but it works.  this loop will check if the first digit of the cc's do not match the company's number.  if it doesnt it just returns a string.
     for (n = 0; n < arr.length; n++) {
         if (arr[n][0] > 6) {
             invalidCardCompanies.push("Company Not Found");
@@ -127,5 +133,6 @@ let invalidCardCompanies = [];
         }
     } return invalidCardCompanies
 }
-console.log(idInvalidCardCompanies(badBatch))
+
+console.log(idInvalidCardCompanies(batch))
 ////////////////idInvalidCardCompanies above////////////////
