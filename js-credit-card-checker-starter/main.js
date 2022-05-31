@@ -93,58 +93,6 @@ findInvalidCards(batch)
 ////////////////idInvalidCardCompanies below////////////////
 
 const idInvalidCardCompanies = (arr) => {
-    amex = [];
-    visa = [];
-    mastercard = [];
-    discover = [];
-
-    for (l = 0; l < arr.length; l++) {
-
-        if (arr[l][0] === 3) {
-           amex.push(arr[l]);
-        }
-
-       if (arr[l][0] === 4) {
-            visa.push(arr[l]);
-        }
-
-        if (arr[l][0] === 5) {
-            mastercard.push(arr[l]);
-        }
-
-        if (arr[l][0] === 6) {
-            discover.push(arr[l]);
-        }
-
-        else {
-             "Company not found";
-        }
-    } //return amex;
-
-cards = [{_Amex:[]},{_Visa:[]},{_Mastercard:[]},{_Discover:[]},{_companyNotFound:[]}]
-
-    for (m = 0; m < arr.length; m++) {
-        if (arr[m][0] === 3) {
-            cards[0]._Amex.push(arr[m]);
-         }
-
-         if (arr[m][0] === 4) {
-            cards[1]._Visa.push(arr[m]);
-         }
-
-         if (arr[m][0] === 5) {
-            cards[2]._Mastercard.push(arr[m]);
-         }
-
-         if (arr[m][0] === 6) {
-            cards[3]._Discover.push(arr[m]);
-         }
-
-         if (arr[m][0] === !3-6) {
-            cards[4]._companyNotFound.push(arr[m]);
-         }
-
-    } //return cards[4];
 
 let invalidCardCompanies = [];
 
