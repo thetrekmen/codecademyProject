@@ -81,24 +81,45 @@ const pAequorFactory = (num, array) => {
         }
       }
       function percentage(partialValue, totalValue) {
-        let truth
-        if ((100 * partialValue) / totalValue > 60) {
-          truth = true
+        let truth;
+        let percentage = Math.floor((100 * partialValue) / totalValue)
+        if ((100 * partialValue) / totalValue >= 60) {
+          truth = true;
         } else {
-          truth = false
-        } return truth
+          truth = false;
+        } return percentage  + "%" + " " + truth;
      }
-
       return `specimen #${this._specimenNum} likelyhood of survival: ${percentage(passed, current)}`
     }
 
   };
 };
 
+function pAequor () {
+  pAequora = number
+  
+  for (i = number; i >= 1; i--) {
+    pAequora--
+    pAequora = pAequorFactory((i), mockUpStrand());
+    console.log(pAequora)
+  } 
+}
+pAequor(30)
+
+
+function survival (array) {
+
+  for (j = array.length; j >= 1; j--) {
+    j = j.willLikelySurvive
+  
+  } console.log(j)
+}
+survival(pAequor(30))
 
 
 
-pAequor_1 = pAequorFactory(randomNum(), mockUpStrand());
+
+/* pAequor_1 = pAequorFactory(randomNum(), mockUpStrand());
 pAequor_2 = pAequorFactory(randomNum(), mockUpStrand());
 pAequor_3 = pAequorFactory(randomNum(), mockUpStrand());
 
@@ -116,7 +137,7 @@ console.log( pAequor_2._compareDNA(pAequor_1) )
 //console.log( `this is the ORIGINAL DNA for specimen #${pAequor_2._specimenNum}: ${pAequor_3._dna}` )
 console.log( pAequor_3._mutate() );
 console.log( pAequor_3.willLikelySurvive() )
-console.log( pAequor_3._compareDNA(pAequor_2) )
+console.log( pAequor_3._compareDNA(pAequor_2) ) */
 
 
 
