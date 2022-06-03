@@ -87,37 +87,26 @@ const pAequorFactory = (num, array) => {
           truth = true;
         } else {
           truth = false;
-        } return percentage  + "%" + " " + truth;
+        } return truth;
      }
-      return `specimen #${this._specimenNum} likelyhood of survival: ${percentage(passed, current)}`
+      return percentage(passed, current)
     }
 
   };
 };
 
-function pAequor () {
-  pAequora = number
-  
-  for (i = number; i >= 1; i--) {
-    pAequora--
-    pAequora = pAequorFactory((i), mockUpStrand());
-    console.log(pAequora)
-  } 
+
+function pAequor(ElementCount){
+  let pAequorSpecimen = [];
+  let pAequorSurvived = [];
+    for (let i = 0; i < ElementCount; i++) {
+        pAequorSpecimen[i] = pAequorFactory((i), mockUpStrand());
+        if (pAequorSpecimen[i].willLikelySurvive() === true) {
+          pAequorSurvived.push(pAequorSpecimen[i])
+        }
+    } console.log(pAequorSurvived);
 }
-pAequor(30)
-
-
-function survival (array) {
-
-  for (j = array.length; j >= 1; j--) {
-    j = j.willLikelySurvive
-  
-  } console.log(j)
-}
-survival(pAequor(30))
-
-
-
+pAequor(5)
 
 /* pAequor_1 = pAequorFactory(randomNum(), mockUpStrand());
 pAequor_2 = pAequorFactory(randomNum(), mockUpStrand());
