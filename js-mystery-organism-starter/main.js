@@ -103,10 +103,15 @@ function pAequor(ElementCount){
         pAequorSpecimen[i] = pAequorFactory((i), mockUpStrand());
         if (pAequorSpecimen[i].willLikelySurvive() === true) {
           pAequorSurvived.push(pAequorSpecimen[i])
+          if (pAequorSurvived.length === 30) {
+            break
+          }
         }
     } console.log(pAequorSurvived);
 }
-pAequor(5)
+pAequor(1000)
+
+
 
 /* pAequor_1 = pAequorFactory(randomNum(), mockUpStrand());
 pAequor_2 = pAequorFactory(randomNum(), mockUpStrand());
