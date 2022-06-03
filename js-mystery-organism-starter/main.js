@@ -13,18 +13,14 @@ const mockUpStrand = function () {
   return newStrand;
 };
 
-//console.log( mockUpStrand()[0] )
+// Code below
 
-let randomNum = function () {
+let randomNumGenerator = function () {
   let number = Math.floor(Math.random() * 100);
   return number
 }
-
-// Code below
 const pAequorFactory = (num, array) => {
 
-  //num = randomNum = Math.floor(Math.random() * 100);
-  //object below
   return {
     _specimenNum: num,
     _dna: array,
@@ -67,8 +63,7 @@ const pAequorFactory = (num, array) => {
       return `specimen #${this._specimenNum} and specimen #${otherSpecimen._specimenNum} have ${Math.floor(percentage(passed, current))}% DNA in common`
     },
 
-
-    willLikelySurvive() {
+    _willLikelySurvive() {
       passed = 0
       current = 15
       for (i = 0; i < this._dna.length; i++) {
@@ -95,13 +90,12 @@ const pAequorFactory = (num, array) => {
   };
 };
 
-
-function pAequor(ElementCount){
+function pAequor30(ElementCount){
   let pAequorSpecimen = [];
   let pAequorSurvived = [];
     for (let i = 0; i < ElementCount; i++) {
         pAequorSpecimen[i] = pAequorFactory((i), mockUpStrand());
-        if (pAequorSpecimen[i].willLikelySurvive() === true) {
+        if (pAequorSpecimen[i]._willLikelySurvive() === true) {
           pAequorSurvived.push(pAequorSpecimen[i])
           if (pAequorSurvived.length === 30) {
             break
@@ -109,28 +103,26 @@ function pAequor(ElementCount){
         }
     } console.log(pAequorSurvived);
 }
-pAequor(1000)
+pAequor30(5000)
 
-
-
-/* pAequor_1 = pAequorFactory(randomNum(), mockUpStrand());
-pAequor_2 = pAequorFactory(randomNum(), mockUpStrand());
-pAequor_3 = pAequorFactory(randomNum(), mockUpStrand());
+/* pAequor_1 = pAequorFactory(randomNumGenerator(), mockUpStrand());
+pAequor_2 = pAequorFactory(randomNumGenerator(), mockUpStrand());
+pAequor_3 = pAequorFactory(randomNumGenerator(), mockUpStrand());
 
 //console.log( `this is the ORIGINAL DNA for specimen #${pAequor_1._specimenNum}: ${pAequor_1._dna}` );
 console.log( pAequor_1._mutate() );
-console.log( pAequor_1.willLikelySurvive() )
+console.log( pAequor_1._willLikelySurvive() )
 console.log( pAequor_1._compareDNA(pAequor_3) )
 
 //console.log( `this is the ORIGINAL DNA for specimen #${pAequor_2._specimenNum}: ${pAequor_2._dna}` )
 console.log( pAequor_2._mutate() );
-console.log( pAequor_2.willLikelySurvive() )
+console.log( pAequor_2._willLikelySurvive() )
 console.log( pAequor_2._compareDNA(pAequor_1) )
 
 
 //console.log( `this is the ORIGINAL DNA for specimen #${pAequor_2._specimenNum}: ${pAequor_3._dna}` )
 console.log( pAequor_3._mutate() );
-console.log( pAequor_3.willLikelySurvive() )
+console.log( pAequor_3._willLikelySurvive() )
 console.log( pAequor_3._compareDNA(pAequor_2) ) */
 
 
