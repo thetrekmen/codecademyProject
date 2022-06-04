@@ -109,7 +109,7 @@ function pAequor30(ElementCount){
         }
     } console.log(pAequorSurvived);
 }
-pAequor30(5000)
+pAequor30(3000)
 
 /* pAequor_1 = pAequorFactory(randomNumGenerator(), mockUpStrand());
 pAequor_2 = pAequorFactory(randomNumGenerator(), mockUpStrand());
