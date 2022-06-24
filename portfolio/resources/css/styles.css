@@ -134,11 +134,7 @@ html, body{
 }
 
 .skills-container {
-    display: grid;
-    grid-template-columns: 4.5rem 40%;
     /* outline: 1px red solid; */
-    height: 4rem;
-    align-items:baseline;
 }
 
 .skills-container div{
@@ -149,7 +145,7 @@ html, body{
     /* outline: 1px blue solid; */
     align-items:baseline;
     position: relative;
-    bottom: -.4rem;
+
 }
 
 .skills-variable {
@@ -162,9 +158,9 @@ html, body{
 
 .skills-icons-container {
     display: grid;
-    grid-template-columns: 1.1rem 3rem 2.5rem 5rem 2.7rem 3.5rem 1.1rem .5rem;
+
     align-items: center;
-    height: 4rem;
+
     /* outline: 1px green solid; */
     position: relative;
 }
