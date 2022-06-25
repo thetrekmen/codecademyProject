@@ -5,6 +5,7 @@
     --orange: #FF6E10;
     --background: #1D1929;
     --white: #FFFFFF;
+    --off-white: #C4C4C4;
 }
 
 html, body{
@@ -14,7 +15,25 @@ html, body{
     font-size: 100%;
     font-size: 16px;
     background-color: var(--background);
+    font-family: 'Roboto', sans-serif;
 }
+
+main {
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+    
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+ul {
+    list-style-type: none;
+}
+
 
 .color-yellow {
     color: var(--yellow);
@@ -36,71 +55,103 @@ html, body{
     color: var(--white);
 }
 
-.devicon-github-original {
-    color: var(--orange);
-    font-size: 2rem;
+nav {
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--background);
+    position: fixed;
+    z-index: 100;
+
 }
 
-.devicon-git-plain {
-    color: var(--orange);
-    font-size: 2rem;
+.logo-nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
 }
 
-.devicon-javascript-plain {
-    color: var(--orange);
-    font-size: 2rem;
+.logo-nav {
+    width: 3rem;
+    margin: .5rem 0rem;
 }
 
-.devicon-html5-plain {
-    color: var(--orange);
-    font-size: 2rem;
+.nav-links {
+    display: flex;
+
 }
 
-.devicon-css3-plain {
-    color: var(--orange);
-    font-size: 2rem;
+.nav-links li a {
+    font-size: 1rem;
+    color: var(--off-white);
 }
 
-.function-frontEndDeveloper-container {
+.nav-links li:nth-child(2) {
+    margin-left: 4rem;
+}
 
+.hero-section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.function-wrapper {
+    position: absolute;
+    width: 100%;
+    font-size: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.opac70 {
+    opacity: 70%;
+}
+
+.opac20 {
+    opacity: 20%;
+}
+
+
+.hero-name {
+    font-size: 4rem;
 }
 
 .function-frontEndDeveloper-container div {
     display: inline-block;
 }
 
-.passions-syntax-container {
+.motivations-syntax-container {
     margin-left: 2rem;
 }
 
-.passions-wrapper {
+.motivations-wrapper {
     /* outline: 1px red solid; */
 }
 
-.passions-wrapper div {
+.motivations-wrapper div {
     display: inline-block;
 
 }
 
-.passions-container {
-    
-}
 
-.passions-container div {
+.motivations-container div {
     display: inline-block;
     
 }
 
-.passions-string-wrapper {
-    width: 25rem;
-    height: 1rem;
+.motivations-string-wrapper {
+    width: 50rem;
+    height: 2rem;
     /* outline: 1px blue solid; */
     position: relative;
 
 
 }
 
-.passions-string-container {
+.motivations-string-container {
     position: absolute;
     /* outline: 1px red solid; */
     top: 0;
@@ -112,13 +163,12 @@ html, body{
     
 }
 
-.passions-string-container:nth-child(1) {
+.motivations-string-container:nth-child(1) {
     animation: fadeIn 5s infinite alternate-reverse both;
     color: var(--orange);
-
 }
 
-.passions-string-container:nth-child(2) {
+.motivations-string-container:nth-child(2) {
     animation: fadeIn 5s infinite alternate;
     color: var(--orange);
 
