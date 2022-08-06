@@ -24,7 +24,6 @@ class Field {
     console.log("avoid the holes and get to your hat")
     this.print()
     let move = prompt("Which way?: ")
-    let outOfBounds;
       if (move == "w") {
         playerLoc = this._field[yCoord][xCoord] = fieldCharacter;
         if (yCoord === 0) {
@@ -110,8 +109,6 @@ class Field {
 }
 
 let fieldGenerator = (size) => {
-  let min = size;
-  let max = size*2;
   let aField = [];
 
   for (let k = 0; k < size -1; k++) {
