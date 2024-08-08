@@ -79,12 +79,14 @@ phyllisEW.numberOfStudents = 478;
 console.log(phyllisEW.numberOfStudents);
 phyllisEW.pickupPolicy = "Students must be picked up by a parent, guardian, or a family member over the age of 13.";
 console.log(phyllisEW.pickupPolicy);
+console.log(phyllisEW.quickFacts())
 
 let ketteringMiddle = new Primary('Kettering Middle', 'Middle', 500);
 console.log(ketteringMiddle.name);
 console.log(ketteringMiddle.level);
 ketteringMiddle.numberOfStudents = 652;
 console.log(ketteringMiddle.numberOfStudents);
+console.log(ketteringMiddle.quickFacts())
 
 let largoHigh = new Primary('Largo High', 'High', 500);
 console.log(largoHigh.name);
@@ -93,3 +95,4 @@ largoHigh.numberOfStudents = 787;
 console.log(largoHigh.numberOfStudents)
 largoHigh.sportsTeams = ['Baseball', 'Basketball', 'Volleyball', 'Track and Field'];
 console.log(largoHigh.sportsTeams);
+console.log(largoHigh.quickFacts())
