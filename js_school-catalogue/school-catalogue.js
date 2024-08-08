@@ -27,10 +27,8 @@ class School {
         this._numberOfStudents = classSize;
     }
 
-
     quickFacts() {
         return `${this._name} educates ${this._numberOfStudents} students at the ${this._level} school level.`
-
     }
 
     static pickSubstituteTeacher(arrayOfTeachers) {
@@ -40,47 +38,58 @@ class School {
 }
 
 class Primary extends School {
-    constructor(name, level, numberOfStudents){
-        super(name, 'high', numberOfStudents);
+    constructor(name, level, numberOfStudents) {
+        super(name, level, numberOfStudents);
         this._pickupPolicy = 'policy';
     }
 
-    get pickupPolicy(){
+    get pickupPolicy() {
         return this._pickupPolicy;
     }
 
-    set pickupPolicy(policy){
-        if (typeof policy !== 'string' || isNaN(policy)) {
-            throw 'Invalid input: pickupPolicy must be entered as a sting.';
+    set pickupPolicy(policy) {
+        if (typeof policy !== 'string') {
+            throw 'Invalid input: pickupPolicy must be entered as a string.';
         }
         this._pickupPolicy = policy;
     }
-
 }
 
 class Middle extends School {
-    constructor(name, level, numberOfStudents){
-        super(name, level , numberOfStudents);
+    constructor(name, level, numberOfStudents) {
+        super(name, level, numberOfStudents);
     }
 }
 
 class High extends School {
-    constructor(name, level, numberOfStudents, sportsTeams){
-        super(name, level , numberOfStudents);
+    constructor(name, level, numberOfStudents, sportsTeams) {
+        super(name, level, numberOfStudents);
         this._sportsTeams = sportsTeams;
     }
 
-    get sportsTeams(){
+    get sportsTeams() {
         return this._sportsTeams;
     }
-
 }
 
-// let phyllisEW = new School('Phyllis E. W.', 'Primary', 500);
-// console.log(phyllisEW);
-// phyllisEW.numberOfStudents = 478;
-// console.log(phyllisEW.numberOfStudents);
-// console.log(School.pickSubstituteTeacher(["Ms. Angelina Jolie", "Mr. Eric Jones", "Ms. Paris Hilton", "Mr. Kayne West", "Mr. Bob Ziroll"]))
-
 let phyllisEW = new Primary('Phyllis E. W.', 'Primary', 500);
-console.log(phyllisEW);
+console.log(phyllisEW.name);
+console.log(phyllisEW.level);
+phyllisEW.numberOfStudents = 478;
+console.log(phyllisEW.numberOfStudents);
+phyllisEW.pickupPolicy = "Students must be picked up by a parent, guardian, or a family member over the age of 13.";
+console.log(phyllisEW.pickupPolicy);
+
+let ketteringMiddle = new Primary('Kettering Middle', 'Middle', 500);
+console.log(ketteringMiddle.name);
+console.log(ketteringMiddle.level);
+ketteringMiddle.numberOfStudents = 652;
+console.log(ketteringMiddle.numberOfStudents);
+
+let largoHigh = new Primary('Largo High', 'High', 500);
+console.log(largoHigh.name);
+console.log(largoHigh.level);
+largoHigh.numberOfStudents = 787;
+console.log(largoHigh.numberOfStudents)
+largoHigh.sportsTeams = ['Baseball', 'Basketball', 'Volleyball', 'Track and Field'];
+console.log(largoHigh.sportsTeams);
